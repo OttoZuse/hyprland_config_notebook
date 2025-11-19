@@ -9,7 +9,7 @@
     "height": 50,
     "modules-left": [
         "clock",
-        "custom/weather",
+        "custom/openweather",
         //"custom/moon",
         "tray"
         // "custom/wall"
@@ -51,10 +51,16 @@
     },
     "hyprland/language": {
       "format": "{}",
-      "format-en": "US",
-      "format-ru": "RU",
+      "format-en": "🇺🇸",
+      "format-ru": "🇷🇺",
       "keyboard-name": "at-translated-set-2-keyboard",
       "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
+    "custom/openweather": {
+        "exec": "~/.config/waybar/scripts/openweathermap.sh",
+        "interval": 600,
+        "format": "{}",
+        "tooltip": false
     },
     "hyprland/window": {
         "format": "{}"
