@@ -16,6 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+# ZSH_THEME="random"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -107,11 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -135,5 +133,9 @@ if [ -f "/home/joyboy/miniforge3/etc/profile.d/mamba.sh" ]; then
     . "/home/joyboy/miniforge3/etc/profile.d/mamba.sh"
 fi
 alias shx="sudo -E hx"
-# <<< conda initialize <<<
-
+alias fetch="fastfetch --config examples/12.jsonc --logo-color-1 red --color red --color-output red --file ~/ascii/berserk_gats"
+alias router="ssh root@OpenWrt"
+alias lsdquarium="asciiquarium | lolcat"
+alias loadcfg="scp /home/joyboy/config root@OpenWrt:/opt/zapret"
+alias loadhosts="scp /home/joyboy/zapret-hosts-user.txt root@OpenWrt:/opt/zapret/ipset"
+alias uploadcfg="scp root@OpenWrt:/opt/zapret/config /home/joyboy"
