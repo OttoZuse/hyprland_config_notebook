@@ -3,29 +3,32 @@
     "position": "top",
     "mod": "dock",
     "exclusive": true,
+    "margin-top": -7,
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
     "modules-left": [
-        "clock#time",
-  	    "clock#date",
+        "clock",
         "custom/weather",
         //"custom/moon",
-        "custom/wall",
-        "hyprland/workspaces"
+        "tray"
+        // "custom/wall"
+        // "hyprland/workspaces"
         //"cpu",
         //"memory",
         //"tempreture",
         //"disk"
     ],
     "modules-center": [
-        "hyprland/window"
+        "hyprland/workspaces"
+        // "hyprland/window"
     ],
     "modules-right": [
         "network",
         "bluetooth",
         "custom/temperature",
         "custom/memory",
+        "hyprland/language",
         "battery",
         "backlight",
         "pulseaudio",
@@ -45,6 +48,13 @@
         "persistent_workspaces": {
             "*": 1
         }
+    },
+    "hyprland/language": {
+      "format": "{}",
+      "format-en": "US",
+      "format-ru": "RU",
+      "keyboard-name": "at-translated-set-2-keyboard",
+      "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
     },
     "hyprland/window": {
         "format": "{}"
@@ -117,21 +127,25 @@
         "spacing": 10
     },
 
-    //"clock": {
-    //   "format": "{: %I:%M %p  %a, %b %e}",
+    // "clock": {
+    //    "format": "{: %I:%M %p  %a, %b %e}",
     //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
-    //},
-    "clock#time": {
-	    "interval": 10,
-	    "format": "{:%H:%M}",
-	    "tooltip": false
+    // },
+    "clock": {
+      "format": "{:%d %b %Y %H:%M}",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
-    "clock#date": {
-	    "interval": 20,
-	    "format": "{:%e %b %Y}",
-	    "tooltip": true,
-	    "tooltip-format": "{:%e %b %Y}"
-    },
+    // "clock-time": {
+	   //  "interval": 10,
+	   //  "format": "{:%H:%M}",
+	   //  "tooltip": false
+    // },
+    // "clock#date": {
+	   //  "interval": 20,
+	   //  "format": "{:%e %b %Y}",
+	   //  "tooltip": true,
+	   //  "tooltip-format": "{:%e %b %Y}"
+    // },
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
@@ -144,7 +158,8 @@
             "*"
         ],
         "on-scroll-up": "brightnessctl -q set 1%+",
-        "on-scroll-down": "brightnessctl -q set 1%-"
+        "on-scroll-down": "brightnessctl -q set 1%-",
+        "on-click": "control"
     },
     "battery": {
         "states": {
@@ -222,10 +237,11 @@
     },
     "bluetooth": {
         "format": " {status}",
-        "format-disabled": "", // an empty format will hide the module
+        "format-disabled": " off", // an empty format will hide the module
         "format-connected": " {num_connections}",
         "tooltip-format": "{device_alias}",
         "tooltip-format-connected": " {device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}"
+        "tooltip-format-enumerate-connected": "{device_alias}",
+        "on-click": "blueman-manager"
     }
 }
