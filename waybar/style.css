@@ -61,6 +61,8 @@ tooltip {
 #network,
 #bluetooth,
 #language,
+#temperature,
+#cpu,
 #custom-temperature,
 #custom-memory,
 #workspaces,
@@ -73,6 +75,13 @@ tooltip {
     margin: 0px 0px;
     margin-top: 10px;
     border: 1px solid #181825;
+}
+
+#cpu {
+    color: #89b4fa;
+}
+#temperature {
+    color: #89b4fa;
 }
 
 #custom-memory {

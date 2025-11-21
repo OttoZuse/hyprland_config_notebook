@@ -11,13 +11,13 @@
         "clock",
         "custom/openweather",
         //"custom/moon",
+        "cpu",
+        //"memory",
+        "temperature",
+        // "disk",
         "tray"
         // "custom/wall"
         // "hyprland/workspaces"
-        //"cpu",
-        //"memory",
-        //"tempreture",
-        //"disk"
     ],
     "modules-center": [
         "hyprland/workspaces"
@@ -26,8 +26,6 @@
     "modules-right": [
         "network",
         "bluetooth",
-        "custom/temperature",
-        "custom/memory",
         "hyprland/language",
         "battery",
         "backlight",
@@ -84,7 +82,7 @@
         "format-alt":"r-wall &"
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": " {usage}%",
         "tooltip": true,
         "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
         "interval": 2
@@ -97,8 +95,8 @@
     },
     "temperature": {
         "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 40,
+        "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
+        "critical-threshold": 80,
         "format-critical": "{icon} {temperatureC}°C",
         "format": "{icon} {temperatureC}°C",
         "format-icons": [
@@ -156,71 +154,87 @@
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "format-icons": [
-            // "󰃞",
-            // "󰃟",
-            // "󰃠"
-            "*",
-            "*",
-            "*"
+            "󰃞",
+            "󰃟",
+            "󰃠"
+            // "*",
+            // "*",
+            // "*"
         ],
         "on-scroll-up": "brightnessctl -q set 1%+",
         "on-scroll-down": "brightnessctl -q set 1%-",
         "on-click": "control"
     },
+    // "battery": {
+    //     "states": {
+    //         "good": 95,
+    //         "warning": 40,
+    //         "critical": 30
+    //     },
+    //     "format": "{icon} {capacity}%",
+    //     "format-charging": " {capacity}%",
+    //     "format-plugged": " {capacity}%",
+    //     "format-alt": "{time} {icon}",
+    //     "format-icons": [
+    //         //"󰂎",
+    //         //"󰁺",
+    //         //"󰁻",
+    //         //"󰁼",
+    //         //"󰁽",
+    //         //"󰁾",
+    //         //"󰁿",
+    //         //"󰂀",
+    //         //"󰂁",
+    //         //"󰂂",
+    //         //"󰁹"
+	   //  "_",
+	   //  "_",
+	   //  "-",
+	   //  "/",
+	   //  "/",
+	   //  "/",
+	   //  "/",
+	   //  "/",
+	   //  "|",
+	   //  "|",
+	   //  "|"
+    //     ]
+    // },
     "battery": {
-        "states": {
-            "good": 95,
-            "warning": 40,
-            "critical": 30
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": [
-            //"󰂎",
-            //"󰁺",
-            //"󰁻",
-            //"󰁼",
-            //"󰁽",
-            //"󰁾",
-            //"󰁿",
-            //"󰂀",
-            //"󰂁",
-            //"󰂂",
-            //"󰁹"
-	    "_",
-	    "_",
-	    "-",
-	    "/",
-	    "/",
-	    "/",
-	    "/",
-	    "/",
-	    "|",
-	    "|",
-	    "|"
-        ]
+      "format": "{icon} {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-charging": " {capacity}%",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "states": {
+        "critical": 5,
+        "warning": 30
+      }
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "tooltip": false,
-        "format-muted": " Muted",
+        "format-muted": "󰖁 ",
         "on-click": "pavucontrol",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 100,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "handsfree": "",
+            "headphones": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
             "default": [
-                "",
-                "",
-                ""
+                "󰕿",
+                "󰖀",
+                "󰕾"
             ]
         }
     },
