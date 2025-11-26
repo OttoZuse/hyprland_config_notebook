@@ -12,7 +12,7 @@
         "custom/openweather",
         //"custom/moon",
         "cpu",
-        //"memory",
+        "memory",
         "temperature",
         // "disk",
         "tray"
@@ -88,7 +88,7 @@
         "interval": 2
     },
     "memory": {
-        "format": " {}%",
+        "format": " {}%",
         "tooltip": true,
         "on-click": "kitty --start-as=fullscreen --title all_is_kitty sh -c 'btop'",
         "interval": 2
@@ -136,7 +136,7 @@
     //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     // },
     "clock": {
-      "format": "{:%d %b %Y %H:%M}",
+      "format": "{:%a %d %b %Y %H:%M}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
     // "clock-time": {
@@ -242,7 +242,7 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
-        "on-click": "pamixer --default-source -t",
+        "on-click": "pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
