@@ -63,6 +63,7 @@ tooltip {
 #language,
 #temperature,
 #cpu,
+#memory,
 #custom-temperature,
 #custom-memory,
 #workspaces,
@@ -78,6 +79,9 @@ tooltip {
 }
 
 #cpu {
+    color: #89b4fa;
+}
+#memory {
     color: #89b4fa;
 }
 #temperature {

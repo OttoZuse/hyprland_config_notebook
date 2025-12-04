@@ -136,7 +136,7 @@
     //    "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     // },
     "clock": {
-      "format": "{:%a %d %b %Y %H:%M}",
+      "format": "{:%a %d %b %H:%M}",
       "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
     },
     // "clock-time": {
@@ -242,7 +242,7 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
-        "on-click": "pavucontrol",
+        "on-click": "easyeffects",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "scroll-step": 5
